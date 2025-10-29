@@ -383,16 +383,20 @@ export function ListaOcorrencias() {
                       <td style={{ color: getStatusColor(o.status), fontWeight: 600 }}>{o.status}</td>
                       <td>{o.responsavel}</td>
                       <td>
-                        <button style={{ border: "none", paddingRight: "0.5rem", background: "transparent", cursor: "pointer" }}>
-                          <EyeIcon size={18} />
-                        </button>
-                        <button style={{ border: "none", paddingRight: "0.5rem", background: "transparent", cursor: "pointer" }}>
-                          <UserIcon size={18} />
-                        </button>
-                        <button style={{ border: "none", background: "transparent", cursor: "pointer" }}>
-                          <InfoIcon size={18} />
-                        </button>
-                      </td>
+  <button 
+    style={{ border: "none", paddingRight: "0.5rem", background: "transparent", cursor: "pointer" }}
+     onClick={() => navigate(`/ocorrencias/detalhes/${encodeURIComponent(o.id)}`)}
+
+>
+    <EyeIcon size={18} />
+  </button>
+  <button style={{ border: "none", paddingRight: "0.5rem", background: "transparent", cursor: "pointer" }}>
+    <UserIcon size={18} />
+  </button>
+  <button style={{ border: "none", background: "transparent", cursor: "pointer" }}>
+    <InfoIcon size={18} />
+  </button>
+</td>
                     </tr>
                   ))}
                 </tbody>
